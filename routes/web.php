@@ -118,22 +118,23 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth:system_admin']], fu
 
 Route::group(['namespace' => 'Enduser', 'middleware' => 'auth:admin'], function () {
 
-    Route::get('sms/settings/test/{number}','SmsController@testSMS');
+
+    // sms settings
+    Route::post('sms/send','SmsController@sendSMS')->name('send_sms');
     Route::get('sms/settings', 'SmsController@index')->name('sms_settings_index');
     Route::get('sms/settings/create', 'SmsController@create')->name('sms.settings.create');
     Route::post('sms/settings/store', 'SmsController@store')->name('sms.settings.store');
     Route::get('sms/settings/edit/{id}', 'SmsController@edit')->name('sms.settings.edit');
     Route::PUT('sms/settings/update/{id}', 'SmsController@update')->name('sms.settings.update');
 
-
-
+   // sms category
     Route::get('category-index', 'SmsCategoryController@index')->name('cat.index');
     Route::get('category-create', 'SmsCategoryController@create');
     Route::post('category-store', 'SmsCategoryController@store');
     Route::get('/category/edit/{id}', 'SmsCategoryController@edit');
     Route::PUT('category-update/{id}', 'SmsCategoryController@update');
 
-
+    // sms template
     Route::get('template-index', 'SmsTemplateController@index')->name('temp.index');
     Route::get('template-create', 'SmsTemplateController@create');
     Route::post('template-store', 'SmsTemplateController@store');

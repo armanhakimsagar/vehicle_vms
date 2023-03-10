@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Enduser;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
+use Http;
 use DB;
 
 class SmsController extends Controller
@@ -30,7 +31,21 @@ class SmsController extends Controller
         }
 
 
-    public function testSMS(){
+    public function sendSMS(Request $request){
+
+        $payload=[
+            'mobile'=>$request->mobile,
+            'message'=>$request->message,
+            'username'=>'Support@gomaxtracker.com',
+            'password'=>'1100',
+        ];
+
+        $response = Http::post('http://bdsmartpay.com/sms/smsapi.php',$payload);
+    
+        $jsonData = $response->json();
+          
+        dd($jsonData);
+
 
     }
     public function create(){

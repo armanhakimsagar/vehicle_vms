@@ -76,14 +76,14 @@
     </button>
 </div>
 
-<form id="saveUserForm" method="post" action="<?php echo e(url('template-store')); ?>">
+<form id="saveUserForm" method="post" action="<?php echo e(route('send_sms')); ?>">
     <div class="modal-body  text-dark">
         <?php echo csrf_field(); ?>
         <!-- Form content start -->
         <div class=" row form-group">
             <label for="name" class="col-lg-3 col-form-label">Number </label>
             <div class="col-lg-9">
-                <input type="text" class="form-control" name="number" required>
+                <input type="text" class="form-control" name="mobile" required>
                 <small id="name-error" class="text-danger" for="name"></small>
             </div>
         </div>
@@ -91,7 +91,7 @@
         <div class=" row form-group">
             <label for="name" class="col-lg-3 col-form-label">Body </label>
             <div class="col-lg-9">
-                <textarea rows="5" cols="5" class="form-control" name="body" required></textarea>
+                <textarea rows="5" cols="5" class="form-control" name="message" required></textarea>
                 <small id="name-error" class="text-danger" for="name"></small>
             </div>
         </div>
