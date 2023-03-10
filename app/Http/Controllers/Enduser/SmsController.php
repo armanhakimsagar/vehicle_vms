@@ -18,13 +18,15 @@ class SmsController extends Controller
                     return Datatables::of($data)
                         ->addIndexColumn()
                         ->addColumn('action', function($row){
-                            $btn = '<a title="Edit" href="'.route('sms.settings.edit',$row->id).'"> <i style="color:orange" class="fa fa-edit"></i></a>  <i style="color:orange" class="fa fa-edit">test</i> ';
+                            $btn = '
+                            <a title="Edit" href="'.route('sms.settings.edit',$row->id).'"> <i style="color:orange" class="fa fa-edit"></i></a>
+                                <button style="border:1px solid orange" data-toggle="modal" data-target="#userModal" onclick="edit_data($id)"  ><i style="color:orange" class="fa fa-cog"></i>Test</button>      ';
                             return $btn;
                         })
                         ->rawColumns(['action'])
                         ->make(true);
                 }
-                return view('enduser.settings.sms.index');
+                return view('enduser.settings.sms.index',compact('data'));
         }
 
 

@@ -32,10 +32,11 @@
                       Sms Settings
                     </h3>
                 </div>
+                <?php if($data->count()==0): ?>
                 <div class="kt-portlet__head-toolbar">
                     <a href="<?php echo e(route('sms.settings.create')); ?>" id="addMasterSetting" class="btn btn-success btn-sm"><i class="la la-plus mr-2"></i>Add New</a>
-
                 </div>
+                <?php endif; ?> 
             </div>
             <div class="kt-portlet__body">
 
@@ -59,7 +60,63 @@
     <!-- end:: Content -->
 </div>
 
+
+<!-- Modals -->
+<div class="modal fade" id="userModal" data-backdrop="static" data-keyboard="false">
+  <div id="dialog" class="modal-dialog">
+    <div class="modal-content">
+      <div id="load_modal_content">
+        
+
+
+      <div class="modal-header bg-info">
+    <h5 class="modal-title">Send Sms</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<form id="saveUserForm" method="post" action="<?php echo e(url('template-store')); ?>">
+    <div class="modal-body  text-dark">
+        <?php echo csrf_field(); ?>
+        <!-- Form content start -->
+        <div class=" row form-group">
+            <label for="name" class="col-lg-3 col-form-label">Number </label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" name="number" required>
+                <small id="name-error" class="text-danger" for="name"></small>
+            </div>
+        </div>
+
+        <div class=" row form-group">
+            <label for="name" class="col-lg-3 col-form-label">Body </label>
+            <div class="col-lg-9">
+                <textarea rows="5" cols="5" class="form-control" name="body" required></textarea>
+                <small id="name-error" class="text-danger" for="name"></small>
+            </div>
+        </div>
+        <!-- Form content end -->
+    </div>
+    <div class="form-button">
+        <button type="button" id="cancle" class="btn btn-danger btn-sm" data-dismiss="modal">Cancel</button>
+        <input type="submit" id="submit" class="btn btn-success btn-sm float-right" value="Send">
+    </div>
+</form>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
+
+$(document).on('submit', 'form#saveUserForm', function(event) {
+
+successMsg('Template created successfully.');
+});
 
 $(function () {      
 
