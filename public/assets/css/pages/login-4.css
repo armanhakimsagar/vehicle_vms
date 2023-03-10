@@ -1,0 +1,196 @@
+.kt-login.kt-login--v4 {
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .kt-login.kt-login--v4 .kt-login__wrapper {
+    padding: 6% 2rem 1rem 2rem;
+    margin: 0 auto 2rem auto;
+    overflow: hidden; }
+    .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container {
+      width: 430px;
+      margin: 0 auto; }
+      .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__logo {
+        text-align: center;
+        margin: 0 auto 2rem auto; }
+      .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__head {
+        margin-top: 1rem;
+        margin-bottom: 1rem; }
+        .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__head .kt-login__title {
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: 500;
+          color: #f7f8fa; }
+        .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__head .kt-login__desc {
+          margin-top: 1.5rem;
+          text-align: center;
+          font-size: 1.1rem;
+          font-weight: 400;
+          color: #f7f8fa; }
+      .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form {
+        margin: 0 auto; }
+        .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .input-group {
+          padding: 0;
+          margin: 0 auto; }
+        .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control {
+          height: 46px;
+          border: none;
+          padding-left: 2.5rem;
+          padding-right: 2.5rem;
+          border-radius: 46px;
+          margin-top: 1.5rem;
+          background: #827f7f57;
+          color: #f7f8fa; }
+          .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control::-moz-placeholder {
+            color: #f7f8fa;
+            opacity: 1; }
+          .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control:-ms-input-placeholder {
+            color: #f7f8fa; }
+          .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control::-webkit-input-placeholder {
+            color: #f7f8fa; }
+        .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control.is-valid + .valid-feedback,
+        .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control.is-invalid + .invalid-feedback {
+          font-weight: 500;
+          font-size: 0.9rem;
+          padding-left: 1.6rem; }
+        .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__extra {
+          margin-top: 30px;
+          margin-bottom: 15px;
+          color: #f7f8fa;
+          font-size: 1rem;
+          padding: 0 1.5rem; }
+          .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__extra .kt-checkbox {
+            font-size: 1rem; }
+          .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__extra .kt-login__link {
+            font-size: 1rem;
+            color: #f7f8fa;
+            transition: color 0.3s ease; }
+            .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__extra .kt-login__link:hover {
+              color: #5d78ff;
+              transition: color 0.3s ease; }
+        .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__actions {
+          text-align: center;
+          margin-top: 2rem; }
+          .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__actions .kt-login__btn-secondary,
+          .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__actions .kt-login__btn-primary {
+            height: 50px;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem; }
+      .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account {
+        text-align: center;
+        margin-top: 2rem; }
+        .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account .kt-login__account-msg {
+          font-size: 1rem;
+          font-weight: 400;
+          color: #f7f8fa; }
+        .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account .kt-login__account-link {
+          font-size: 1rem;
+          font-weight: 500;
+          color: #f7f8fa;
+          transition: color 0.3s ease; }
+          .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account .kt-login__account-link:hover {
+            color: #5d78ff;
+            transition: color 0.3s ease; }
+
+.kt-login.kt-login--v4.kt-login--signin .kt-login__signup {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--signin .kt-login__signin {
+  display: block; }
+
+.kt-login.kt-login--v4.kt-login--signin .kt-login__forgot {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--signup .kt-login__signup {
+  display: block; }
+
+.kt-login.kt-login--v4.kt-login--signup .kt-login__signin {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--signup .kt-login__forgot {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--signup .kt-login__account {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--forgot .kt-login__signup {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--forgot .kt-login__signin {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--forgot .kt-login__forgot {
+  display: block; }
+
+@media (max-width: 1024px) {
+  .kt-login.kt-login--v4 .kt-login__wrapper {
+    padding-top: 5rem;
+    width: 100%; }
+    .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container {
+      margin: 0 auto; }
+      .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account {
+        margin-top: 1rem; } }
+
+@media (max-width: 768px) {
+  .kt-login.kt-login--v4 .kt-login__wrapper {
+    width: 100%; }
+    .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container {
+      width: 100%;
+      margin: 0 auto; }
+      .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form {
+        width: 100%;
+        margin: 0 auto; }
+      .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account {
+        margin-top: 1rem; } }
+
+
+  /* custom css */
+  .custom-msg{
+    color:#f7f8fa;
+  }
+  .custom-account-link{
+    color: #f7f8fa;
+  }
+  .custom-account-link:hover{
+     color: #5d78ff;
+  }
+  .error-msg{
+    margin-left: 25px;
+}
+.custom-login-display{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+.login_template_logo{
+  max-width: 210px;
+  min-width: 200px;
+}
+.footer_logo {
+  width: 110px;
+  height: auto;
+}
+.login_footer_section{
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+  right:30px;
+}
+
+@media (max-width:776px) {
+  .login_template_logo{
+    max-width: 170px;
+    min-width: 160px;
+  }
+  .login_footer_section>.justify-content-end {
+      justify-content: center !important;
+  }
+
+  .footer_logo {
+      width: 80px;
+      height: auto;
+  }
+
+  .login_footer_section{
+    right: 0px;
+  }
+}

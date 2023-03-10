@@ -1,0 +1,233 @@
+.modal-header {
+    padding: 5px 15px;
+    margin: -1px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.modal-footer {
+    padding-top: 0.5rem;
+    padding-bottom: 15px;
+    background: none;
+    border-top: none;
+}
+.modal-title {
+    color: white !important;
+    font-size: 14px !important;
+    text-transform: uppercase;
+    margin-top: 3px;
+}
+.custom-modal-width{
+    min-width: 80vw;
+}
+.close {
+    color: white !important;
+    margin: -15px -15px -15px auto;
+}
+.close:hover {
+    color: white !important;
+}
+
+small.text-danger {
+    font-size: 95%;
+}
+.form-button {
+    padding: 5px 18px 15px 18px;
+}
+
+.card {
+    margin-top: -20px;
+}
+textarea.form-control {
+    padding: 5px 12px;
+}
+.nav-tabs .nav-item .nav-link {
+    color: #0575a0;
+    font-weight: 600;
+}
+.nav-tabs .nav-item .nav-link.active,
+.nav-tabs .nav-item .nav-link:active,
+.nav-tabs .nav-item .nav-link:hover {
+    color: #2aa6d6;
+}
+
+.dateTime {
+    width: 135px !important;
+    margin-top: -5px;
+}
+.custom-input-text {
+    margin-top: -5px;
+}
+.check {
+    padding: 4px 5px;
+    background: #ff9951;
+    color: white;
+}
+.check:hover {
+    background: #e47f37;
+    color: white;
+}
+.quick-date {
+    padding: 4px 5px;
+    margin-top: -5px !important;
+}
+.custom-head {
+    height: 100px;
+}
+.dropdown-menu-custom {
+    width: 180px !important;
+}
+.custom-form-control {
+    width: 180px !important;
+}
+.select2-selection__rendered {
+    padding: 5px 7px !important;
+}
+.kt-menu__section-text {
+    color: #dedfe4 !important;
+}
+.custom-row {
+    padding: 5px;
+}
+.custom-card {
+    margin: 7px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 70px;
+}
+.custom-card-export {
+    border: none;
+}
+.custom-card-body {
+    padding: 10px 5px 0 5px;
+    color: white;
+}
+.dataTables_length {
+    width: 66.66%;
+    float: left;
+    margin-bottom: 15px;
+}
+.dataTables_filter {
+    width: 33.33%;
+    float: left;
+    margin-bottom: 15px;
+}
+.custom-kt-portlet--height-fluid {
+    height: auto !important;
+}
+.custom-kt-portlet__head {
+    min-height: 50px !important;
+    padding: 0 15px 0 0 !important;
+}
+span.form-control {
+    border: none;
+}
+.custom-form-group-border > .form-group {
+    margin-bottom: -5px !important;
+}
+.custom-form-group-border > .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.custom-form-group-border > .form-group > .col-form-label {
+    padding-bottom: 0 !important;
+}
+.custom-button-class {
+    border: none;
+    padding: 0 !important;
+    color: #ff9951;
+    background-color: transparent;
+}
+.custom-button-class:hover {
+    color: #e47f37;
+}
+
+.custom-icon {
+    font-size: 18px !important;
+}
+.custom-kt-portlet{
+    margin-bottom: 0 !important;
+}
+.custom-kt-portlet__head2{
+    padding: 0 !important;
+    min-height: 35px !important;
+}
+.custom-kt-portlet__body{
+    padding: 0 !important;
+}
+
+.custom-dreopdown-menu{
+    min-width: 125px !important;
+}
+.custom-dreopdown-item{
+    color: #5B5C60;
+}
+.custom-dreopdown-item:hover{
+    color: #5B5C60;
+    text-decoration: underline !important;
+}
+.custom-dreopdown-item> i{
+    font-size: 13px !important;
+}
+.custom-select-2> .select2-container {
+    width: 100% !important;
+    min-width: 55px !important;
+}
+.custom-form-control-part>div{
+    padding-left: 0;
+    padding-top: 5px;
+}
+.custom-heading-section{
+    background: #ddd;
+}
+.custom-heading-6{
+    margin-top: 6px;
+}
+
+
+.custom-kt-portlet__head {
+    min-height: 50px !important;
+}
+
+.dateTime {
+    width: 90px !important;
+    margin-top: -5px;
+}
+.custom-input-text {
+    margin-top: -5px;
+}
+.check {
+    padding: 4px 5px;
+    background: #ff9951;
+    color: white;
+}
+.check:hover {
+    background: #e47f37;
+    color: white;
+}
+.quick-date {
+    padding: 4px 5px;
+}
+.custom-head {
+    height: 100px;
+}
+.dropdown-menu-custom {
+    width: 180px !important;
+}
+.custom-select-2> .select2-container {
+    width: 100% !important;
+    min-width: 55px !important;
+}
+.custom-list-group-item {
+    padding: 5px 15px 10px 15px;
+    margin: 2px 0 !important;
+    border: none;
+}
+.custom_img_holder{
+    max-width: 250px;
+    height: 75px;
+}
+.custom_img_holder2{
+    max-width: 310px;
+    height: 120px;
+}

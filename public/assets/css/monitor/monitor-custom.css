@@ -1,0 +1,125 @@
+.modal-header {
+    padding: 5px 15px;
+    margin: -1px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.modal-footer {
+    padding-top: .5rem;
+    padding-bottom: 15px;
+    background: none;
+    border-top: none;
+}
+.modal-title{
+    color: white !important;
+    font-size: 15px !important;
+    text-transform: uppercase;
+}
+.close{
+    color: white !important;
+    margin: -15px -15px -15px auto;
+}
+.close:hover{
+    color: white !important;
+}
+
+#draggableDiv {
+    width:350px;
+    position: absolute;
+    left: 90px;
+    top: 95px;
+    z-index: 90;
+  }
+  .kt-widget2 .kt-widget2__item .kt-widget2__checkbox {
+    padding: 0 !important;
+}
+.custom-kt-portlet__body{
+    padding:  0 !important;
+}
+.kt-widget2 .kt-widget2__item {
+    margin-bottom: 0 !important;
+    padding: 3px 0;
+}
+.minimize{
+    font-size: 20px;
+    color: white;
+}
+.minimize:hover{
+    font-size: 18px;
+    cursor: pointer;
+}
+#showDraggableDiv{
+    width: 30px;
+    height: 30px;
+    display: none;
+    background: #1e1e2da8;
+    position: absolute;
+    left: 80px;
+    top: 95px;
+    z-index: 90;
+}
+.maximize{
+    font-size: 20px;
+    color: white;
+}
+.maximize:hover{
+    font-size: 22px !important;
+    cursor: pointer;
+}
+.custom-kt-portlet__head{
+    background: #1E1E2D;
+}
+.custom-kt-portlet__head-title{
+    color: white !important;
+}
+.custom-list-group-item{
+    padding: 5px 15px;
+    border: none;
+}
+.custom-list-group-item2{
+    padding: 5px 0;
+    border: none;
+}
+.kt-checkbox> span{
+    margin-top: -3px;
+}
+.custom-link{
+    color: #595d6e;
+    font-weight: 500;
+
+}
+.custom-icon{
+    font-size: 14px !important;
+}
+.custom-dropdown-menu {
+    min-width: 110px !important;
+}
+
+.custom-card-title {
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    padding: 5px 2px !important;
+  
+}
+.demo-heading {
+    position: relative;
+
+}
+.group-button{
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.group-heading{
+    padding: 10px;
+    background: #E9F1FE;
+}
+
+.custom-input-text {
+    padding: 5px 10px !important;
+}
+
+.custom-section{
+    width: 85%;
+    margin: 5px auto;
+}
