@@ -110,6 +110,14 @@
                                 </a>
                             </li>
 
+                            
+                            <li class="kt-menu__item " aria-haspopup="true">
+                                <a href="{{ url('vehicle-type')}}" class="kt-menu__link  vms_menu_item" id="vehicle_group" data-rel="vehicle_group">
+                                    <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                    <span class="kt-menu__link-text">Vehicle type</span>
+                                </a>
+                            </li>
+
                             <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ url('dashboard/d/vehicle_group')}}" class="kt-menu__link  vms_menu_item" id="vehicle_group" data-rel="vehicle_group">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
@@ -199,6 +207,12 @@
                                 </a>
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
+                                <a href="{{ url('v-type-index')}}" class="kt-menu__link  vms_menu_item" id="vendor_manage" data-rel="vendor_manage">
+                                    <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                    <span class="kt-menu__link-text">Vendor type</span>
+                                </a>
+                            </li>
+                            <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ url('dashboard/d/vendor_manage')}}" class="kt-menu__link  vms_menu_item" id="vendor_manage" data-rel="vendor_manage">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Manage vendor</span>
@@ -252,6 +266,12 @@
                                 <a href="{{ url('dashboard/d/customer')}}" class="kt-menu__link  vms_menu_item" id="customer" data-rel="customer">
                                     <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                     <span class="kt-menu__link-text">Customer list</span>
+                                </a>
+                            </li>
+                            <li class="kt-menu__item " aria-haspopup="true">
+                                <a href="{{ url('customer-group-index')}}" class="kt-menu__link  vms_menu_item" id="customer" data-rel="customer">
+                                    <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                    <span class="kt-menu__link-text">Customer Group</span>
                                 </a>
                             </li>
                             <!-- <li class="kt-menu__item " aria-haspopup="true">

@@ -142,7 +142,26 @@ Route::group(['namespace' => 'Enduser', 'middleware' => 'auth:admin'], function 
     Route::PUT('template-update/{id}', 'SmsTemplateController@update');
 
 
+    // vehicle type
+    Route::get('vehicle-type', 'VehicleTypeController@index')->name('vehicle.type.index');
+    Route::get('vehicle-type-create', 'VehicleTypeController@create');
+    Route::post('vehicle-type-store', 'VehicleTypeController@store');
+    Route::get('/vehicle-type/edit/{id}', 'VehicleTypeController@edit');
+    Route::PUT('vehicle-type-update/{id}', 'VehicleTypeController@update');
 
+    // vendor type
+    Route::get('v-type-index', 'VendorTypeController@index')->name('vandor.type.index');
+    Route::get('v-type-create', 'VendorTypeController@create');
+    Route::post('v-type-store', 'VendorTypeController@store');
+    Route::get('/v-type/edit/{id}', 'VendorTypeController@edit');
+    Route::PUT('v-type-update/{id}', 'VendorTypeController@update');
+
+    // customer group
+    Route::get('customer-group-index', 'CustomerGroupController@index')->name('customer.group.index');
+    Route::get('customer-group-create', 'CustomerGroupController@create');
+    Route::post('customer-group-store', 'CustomerGroupController@store');
+    Route::get('/customer-group/edit/{id}', 'CustomerGroupController@edit');
+    Route::PUT('customer-group-update/{id}', 'CustomerGroupController@update');
 
 
 
