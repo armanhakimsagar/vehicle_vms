@@ -90,7 +90,7 @@ class VehicleStaffService
                 $vehicle_staff = VehicleStaff::find($id);
                 $oldImg = $vehicle_staff->staff_image;
             } else {
-                $vehicle_staff = new VehicleStaff();
+                $vehicle_staff = new VehicleStaff;
                 $vehicle_staff->customer_id = Auth::user()->id;
             }
             $photo = $request->file('photo');
@@ -108,26 +108,7 @@ class VehicleStaffService
                     }
                 }
             }
-            $vehicle_staff->staff_id = $request->staff_id;
-            $vehicle_staff->staff_name = $request->staff_name;
-            $vehicle_staff->father_name = $request->father_name;
-            $vehicle_staff->mother_name = $request->mother_name;
-            $vehicle_staff->phone = $request->phone;
-            $vehicle_staff->contact_one = $request->contact_one;
-            $vehicle_staff->contact_two = $request->contact_two;
-            $vehicle_staff->email = $request->email;
-            $vehicle_staff->date_of_birth = $request->date_of_birth;
-            $vehicle_staff->nid_no = $request->nid_no;
-            $vehicle_staff->present_address = $request->present_address;
-            $vehicle_staff->permanent_address = $request->permanent_address;
-            $vehicle_staff->staff_type = $request->staff_type;
-            $vehicle_staff->driving_licence = $request->driving_licence;
-            $vehicle_staff->work_experience = $request->work_experience;
-            $vehicle_staff->previous_organisation = $request->previous_organisation;
-            $vehicle_staff->assigned_vehicle = $request->assigned_vehicle;
-            $vehicle_staff->assigned_date = $request->assigned_date;
-            $vehicle_staff->status = $request->status;
-            $vehicle_staff->save();
+        
             createCOA([
                 'title' => $vehicle_staff->staff_name,
                 'code_no' => 'STF' . sprintf("%06d", $vehicle_staff->id),

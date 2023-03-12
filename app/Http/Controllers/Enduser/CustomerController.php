@@ -129,6 +129,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
+
         $users = User::get();
         $distributor = Customer::where('actor_type', 1)->get();
         $divisions = getTableWhere('divisions', array());
@@ -204,6 +205,7 @@ class CustomerController extends Controller
 
     public function customer_info($pages, $id)
     {
+
         $data[] = '';
 
         if ($pages == 'customer_info') {

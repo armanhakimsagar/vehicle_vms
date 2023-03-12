@@ -35,8 +35,9 @@ class VehicleStaffController extends Controller
     public function index()
     {
 
-        $query = $this->my_connection->select("select vs.*, v.vehicle_no, v.status as v_status, ms.name as staff_type_name from vehicle_staff vs left join vehicles v on v.id = vs.assigned_vehicle left join master_settings ms on ms.id=vs.staff_type order by vs.id desc");
 
+ 
+        $query = $this->my_connection->select("select vs.*, v.vehicle_no, v.status as v_status, ms.name as staff_type_name from vehicle_staff vs left join vehicles v on v.id = vs.assigned_vehicle left join master_settings ms on ms.id=vs.staff_type order by vs.id desc");
         if (count($query) > 0) {
             foreach ($query as $q) {
                 $assiged_to_vehicle = '';
@@ -102,24 +103,46 @@ class VehicleStaffController extends Controller
             return $this->respondInvalidRequest($validator->errors());
         }
 
-            $photo = $request->file('photo');
-            if ($photo) {
-                $imgName = date("Ymd_His");
-                $ext = strtolower($photo->getClientOriginalExtension());
-                $fullName = $imgName . '.' . $ext;
-                $uploadPath = 'public/uploads/driver/';
-                $uploadTo = $photo->move($uploadPath, $fullName);
-                $vehicle_staff->staff_image = $fullName;
-                if ($id > 0) {
-                    $image_path = $uploadPath . $oldImg;
-                    if (File::exists($image_path) && $oldImg != null) {
-                        File::delete($image_path);
+          
+
+            if($id>0){
+                $vehicle_staff = VehicleStaff::find($id);
+
+
+                $photo = $request->file('photo');
+                $oldImg = $vehicle_staff->staff_image;
+                if ($photo) {
+                    $imgName = date("Ymd_His");
+                    $ext = strtolower($photo->getClientOriginalExtension());
+                    $fullName = $imgName . '.' . $ext;
+                    $uploadPath = 'public/uploads/driver/';
+                    $uploadTo = $photo->move($uploadPath, $fullName);
+                    $vehicle_staff->staff_image = $fullName;
+                    if ($id > 0) {
+                        $image_path = $uploadPath . $oldImg;
+                        if (File::exists($image_path) && $oldImg != null) {
+                            File::delete($image_path);
+                        }
                     }
                 }
+
+
+
+            }else{
+                $vehicle_staff = new VehicleStaff;
+                $photo = $request->file('photo');
+                if ($photo) {
+                    $imgName = date("Ymd_His");
+                    $ext = strtolower($photo->getClientOriginalExtension());
+                    $fullName = $imgName . '.' . $ext;
+                    $uploadPath = 'public/uploads/driver/';
+                    $uploadTo = $photo->move($uploadPath, $fullName);
+                    $vehicle_staff->staff_image = $fullName;
+                }
             }
-            $vehicle_staff = new VehicleStaff;
-            $vehicle_staff->customer_id = auth()->user()->id
-            ;
+
+       
+            $vehicle_staff->customer_id = auth()->user()->id;
             $vehicle_staff->staff_id = $request->staff_id;
             $vehicle_staff->staff_name = $request->staff_name;
             $vehicle_staff->staff_type = $request->staff_type?:0;

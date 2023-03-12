@@ -711,15 +711,17 @@
                                                             <small id="billing_date-error" class="text-danger"></small>
                                                         </div>
                                                     </div> -->
+                                                    <?php 
+                                                     $user = DB::table('users')->get();
+                                                    ?>
                                                     <div class="form-group row">
                                                         <label class="col-form-label col-lg-3 col-sm-12">Reporter</label>
                                                         <div class="col-lg-5 col-md-9 col-sm-12">
                                                             <select class="form-control kt-select2-2" name="reporter">
                                                                 <option value="0">Select</option>
-                                                                <option value="1">01</option>
-                                                                <option value="2">02</option>
-                                                                <option value="3">03</option>
-                                                                <option value="4">04</option>
+                                                                <?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $users): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                  <option value="<?php echo e($users->id); ?>"><?php echo e($users->name); ?></option>
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </select>
                                                             <small id="reporter-error" class="text-danger"></small>
                                                         </div>
@@ -729,10 +731,9 @@
                                                         <div class="col-lg-5 col-md-9 col-sm-12">
                                                             <select class="form-control kt-select2-2" name="follower">
                                                                 <option value="0">Select</option>
-                                                                <option value="1">01</option>
-                                                                <option value="2">02</option>
-                                                                <option value="3">03</option>
-                                                                <option value="4">04</option>
+                                                                <?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $users): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                  <option value="<?php echo e($users->id); ?>"><?php echo e($users->name); ?></option>
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </select>
                                                             <small id="follower-error" class="text-danger"></small>
                                                         </div>

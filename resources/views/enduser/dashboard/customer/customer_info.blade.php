@@ -708,15 +708,17 @@
                                                 <small id="ac_opening_date-error" class="text-danger"></small>
                                             </div>
                                         </div>
+                                        @php 
+                                                     $user = DB::table('users')->get();
+                                                    @endphp
                                         <div class="form-group row">
                                             <label class="col-form-label col-lg-3 col-sm-12">Reporter </label>
                                             <div class="col-lg-7 col-md-8 col-sm-12">
                                                 <select class="form-control kt-select2-2" name="reporter">
                                                     <option value="0">Select</option>
-                                                    <option value="1">01</option>
-                                                    <option value="2">02</option>
-                                                    <option value="3">03</option>
-                                                    <option value="4">04</option>
+                                                    @foreach($user as $users)
+                                                                  <option value="{{$users->id}}" @if($users->id==$customer->reporter) selected @endif>{{$users->name}}</option>
+                                                                @endforeach
                                                 </select>
                                                 <small id="reporter-error" class="text-danger"></small>
                                             </div>
@@ -726,10 +728,9 @@
                                             <div class="col-lg-7 col-md-8 col-sm-12">
                                                 <select class="form-control kt-select2-2" name="follower">
                                                     <option value="0">Select</option>
-                                                    <option value="1">01</option>
-                                                    <option value="2">02</option>
-                                                    <option value="3">03</option>
-                                                    <option value="4">04</option>
+                                                    @foreach($user as $users)
+                                                                  <option value="{{$users->id}}" @if($users->id==$customer->follower) selected @endif>{{$users->name}}</option>
+                                                                @endforeach
                                                 </select>
                                                 <small id="follower-error" class="text-danger"></small>
                                             </div>
