@@ -24,6 +24,8 @@
     <!-- begin:: Content -->
     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid vehicle_data_list">
 
+
+
         <div class="kt-portlet kt-portlet--height-fluid custom-kt-portlet--height-fluid">
             <div class="kt-portlet__head kt-portlet__head--lg">
                 <div class="kt-portlet__head-label">
@@ -32,8 +34,25 @@
                     </span>
                     <h3 class="kt-portlet__head-title">
                       Sms Settings
+                      
+
                     </h3>
                 </div>
+
+                @if (session('success'))
+                    <div class="alert alert-success" id="success-message">
+                        {{ session('success') }}
+                    </div>
+               @endif
+
+                @if (session('error'))
+                    <div class="alert alert-danger" id="error-message">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
+
+
                 @if($data->count()==0)
                 <div class="kt-portlet__head-toolbar">
                     <a href="{{route('sms.settings.create')}}" id="addMasterSetting" class="btn btn-success btn-sm"><i class="la la-plus mr-2"></i>Add New</a>
@@ -48,6 +67,7 @@
                         <tr>
                             <th>SL</th>
                             <th>Provider Name</th>
+                            <th>User Id</th>
                             <th>Status</th>
                             <th>Action </th>
                         </tr>
@@ -115,10 +135,7 @@
 
 <script>
 
-$(document).on('submit', 'form#saveUserForm', function(event) {
 
-successMsg('Template created successfully.');
-});
 
 $(function () {      
 
@@ -134,6 +151,7 @@ var table= $('#user_table').DataTable({
     columns: [
         {data: 'DT_RowIndex', name: 'DT_RowIndex', className: 'text-center'},
         {data: 'provider_name', name: 'provider_name'},
+        {data: 'user_id', name: 'user_id'},
         {data: 'status', name: 'status'},
         {data: 'action', name: 'action', className: 'text-center', orderable: false, searchable: false},
     ],
@@ -185,7 +203,14 @@ var table= $('#user_table').DataTable({
 table.buttons().container().appendTo('#user_table_length');
 
 });
+
+setTimeout(function() {
+        $('#success-message').fadeOut('fast');
+        $('#error-message').fadeOut('fast');
+    }, 3000); // 3 seconds
     
 
 </script>
+
+
 @endsection

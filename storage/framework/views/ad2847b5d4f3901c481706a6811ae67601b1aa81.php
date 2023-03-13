@@ -272,6 +272,9 @@
                                             details</a></li>
                                 </ul>
                                 <div class="tab-content">
+                                <?php 
+                                                 $group_data=DB::table('customer_group')->get();
+                                                ?>
                                     <div class="tab-pane active" id="tab-eg1-0" role="tabpanel">
                                         <div class="form-group row">
                                             <input type="hidden" id="id" value="<?php echo e($customer->id); ?>">
@@ -279,10 +282,10 @@
                                             <div class="col-lg-7 col-md-8 col-sm-12">
                                                 <select class="form-control kt-select2-2" name="customer_group">
                                                     <option value="">Select</option>
-                                                    <option value="01">01</option>
-                                                    <option value="02">02</option>
-                                                    <option value="03">03</option>
-                                                    <option value="04">04</option>
+                                                    <?php $__currentLoopData = $group_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $g): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        
+                                                                  <option value="<?php echo e($g->id); ?>" <?php if($g->id==$customer->customer_group_id): ?> selected <?php endif; ?>><?php echo e($g->name); ?></option>
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 </select>
                                                 <small id="customer_group-error" class="text-danger"></small>
                                             </div>
@@ -718,7 +721,7 @@
                                                 <select class="form-control kt-select2-2" name="reporter">
                                                     <option value="0">Select</option>
                                                     <?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $users): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                                  <option value="<?php echo e($users->id); ?>"><?php echo e($users->name); ?></option>
+                                                                  <option value="<?php echo e($users->id); ?>" <?php if($users->id==$customer->reporter): ?> selected <?php endif; ?>><?php echo e($users->name); ?></option>
                                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 </select>
                                                 <small id="reporter-error" class="text-danger"></small>

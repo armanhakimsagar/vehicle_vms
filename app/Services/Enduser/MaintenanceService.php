@@ -16,6 +16,7 @@ class MaintenanceService
 
     public function datatable($query)
     {
+
         $datalist = Datatables::of($query)
             ->addIndexColumn()
             ->addColumn('action', function ($row) {

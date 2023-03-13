@@ -122,6 +122,7 @@ Route::group(['namespace' => 'Enduser', 'middleware' => 'auth:admin'], function 
     // sms settings
     Route::post('sms/send','SmsController@sendSMS')->name('send_sms');
     Route::get('sms/settings', 'SmsController@index')->name('sms_settings_index');
+    Route::get('sms/log', 'SmsController@smsLog')->name('sms_log_index');
     Route::get('sms/settings/create', 'SmsController@create')->name('sms.settings.create');
     Route::post('sms/settings/store', 'SmsController@store')->name('sms.settings.store');
     Route::get('sms/settings/edit/{id}', 'SmsController@edit')->name('sms.settings.edit');

@@ -272,6 +272,9 @@
                                             details</a></li>
                                 </ul>
                                 <div class="tab-content">
+                                @php 
+                                                 $group_data=DB::table('customer_group')->get();
+                                                @endphp
                                     <div class="tab-pane active" id="tab-eg1-0" role="tabpanel">
                                         <div class="form-group row">
                                             <input type="hidden" id="id" value="{{$customer->id}}">
@@ -279,10 +282,10 @@
                                             <div class="col-lg-7 col-md-8 col-sm-12">
                                                 <select class="form-control kt-select2-2" name="customer_group">
                                                     <option value="">Select</option>
-                                                    <option value="01">01</option>
-                                                    <option value="02">02</option>
-                                                    <option value="03">03</option>
-                                                    <option value="04">04</option>
+                                                    @foreach($group_data as $g)
+                                                        
+                                                                  <option value="{{$g->id}}" @if($g->id==$customer->customer_group_id) selected @endif>{{$g->name}}</option>
+                                                                @endforeach
                                                 </select>
                                                 <small id="customer_group-error" class="text-danger"></small>
                                             </div>

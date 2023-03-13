@@ -65,6 +65,10 @@
                                                         class="nav-link">Account details</a></li>
                                             </ul>
                                             <div class="tab-content">
+                                                <?php 
+                                                 $group_data=DB::table('customer_group')->get();
+                                                 $e_data=DB::table('users')->get();
+                                                ?>
                                                 <div class="tab-pane active" id="tab-eg11-0" role="tabpanel">
                                                     <div class="form-group row">
                                                         <label class=" col-form-label col-lg-3 col-sm-12">Customer
@@ -73,10 +77,9 @@
                                                             <select class="form-control kt-select2-2"
                                                                 name="customer_group">
                                                                 <option value="">Select</option>
-                                                                <option value="01">01</option>
-                                                                <option value="02">02</option>
-                                                                <option value="03">03</option>
-                                                                <option value="04">04</option>
+                                                                <?php $__currentLoopData = $group_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $g): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                  <option value="<?php echo e($g->id); ?>"><?php echo e($g->name); ?></option>
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </select>
                                                             <small id="customer_group-error"
                                                                 class="text-danger"></small>
@@ -108,10 +111,9 @@
                                                         <div class="col-lg-5 col-md-9 col-sm-12">
                                                             <select class="form-control kt-select2-2" name="employee">
                                                                 <option value="">Select</option>
-                                                                <option value="01">01</option>
-                                                                <option value="02">02</option>
-                                                                <option value="03">03</option>
-                                                                <option value="04">04</option>
+                                                                <?php $__currentLoopData = $e_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $em): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                  <option value="<?php echo e($em->id); ?>"><?php echo e($g->name); ?></option>
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                                             </select>
                                                             <small id="employee-error" class="text-danger"></small>
@@ -598,7 +600,7 @@
                                                         </label>
                                                         <div class="col-lg-5 col-md-9 col-sm-12">
                                                             <div class="input-group">
-                                                                <input type="text" class="form-control"
+                                                                <input type="password" class="form-control"
                                                                     id="system_password" name="system_password"
                                                                     placeholder="Enter system password" value="111222">
                                                                 <div class="input-group-append">

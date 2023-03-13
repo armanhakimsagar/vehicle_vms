@@ -22,6 +22,8 @@
     <!-- begin:: Content -->
     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid vehicle_data_list">
 
+
+
         <div class="kt-portlet kt-portlet--height-fluid custom-kt-portlet--height-fluid">
             <div class="kt-portlet__head kt-portlet__head--lg">
                 <div class="kt-portlet__head-label">
@@ -30,8 +32,27 @@
                     </span>
                     <h3 class="kt-portlet__head-title">
                       Sms Settings
+                      
+
                     </h3>
                 </div>
+
+                <?php if(session('success')): ?>
+                    <div class="alert alert-success" id="success-message">
+                        <?php echo e(session('success')); ?>
+
+                    </div>
+               <?php endif; ?>
+
+                <?php if(session('error')): ?>
+                    <div class="alert alert-danger" id="error-message">
+                        <?php echo e(session('error')); ?>
+
+                    </div>
+                <?php endif; ?>
+
+
+
                 <?php if($data->count()==0): ?>
                 <div class="kt-portlet__head-toolbar">
                     <a href="<?php echo e(route('sms.settings.create')); ?>" id="addMasterSetting" class="btn btn-success btn-sm"><i class="la la-plus mr-2"></i>Add New</a>
@@ -46,6 +67,7 @@
                         <tr>
                             <th>SL</th>
                             <th>Provider Name</th>
+                            <th>User Id</th>
                             <th>Status</th>
                             <th>Action </th>
                         </tr>
@@ -113,10 +135,7 @@
 
 <script>
 
-$(document).on('submit', 'form#saveUserForm', function(event) {
 
-successMsg('Template created successfully.');
-});
 
 $(function () {      
 
@@ -132,6 +151,7 @@ var table= $('#user_table').DataTable({
     columns: [
         {data: 'DT_RowIndex', name: 'DT_RowIndex', className: 'text-center'},
         {data: 'provider_name', name: 'provider_name'},
+        {data: 'user_id', name: 'user_id'},
         {data: 'status', name: 'status'},
         {data: 'action', name: 'action', className: 'text-center', orderable: false, searchable: false},
     ],
@@ -183,8 +203,15 @@ var table= $('#user_table').DataTable({
 table.buttons().container().appendTo('#user_table_length');
 
 });
+
+setTimeout(function() {
+        $('#success-message').fadeOut('fast');
+        $('#error-message').fadeOut('fast');
+    }, 3000); // 3 seconds
     
 
 </script>
+
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.enduser.dashboard.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/resources/views/enduser/settings/sms/index.blade.php ENDPATH**/ ?>

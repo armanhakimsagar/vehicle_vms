@@ -32,7 +32,6 @@ class MaintenanceController extends Controller
      */
     public function index(Request $request)
     {
-        // dd($request->all());
         $query = "select m.*, v.vehicle_no, mt.name as mt_name from maintenances m left join vehicles v on v.id =m.vehicle_id left join maintenance_types mt on mt.id = m.main_type_id where m.id > 0 ";
 
         if($request->vehicle_id !=null && $request->vehicle_id > 0){

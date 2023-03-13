@@ -36,11 +36,11 @@
                 <div class="kt-portlet__head-toolbar">
                     <div class="kt-portlet__head-wrapper">
                         <div class="kt-portlet__head-actions">
-                          
+<!--                           
                             <a href="javascript:;" class=" add_user btn btn-brand btn-sm btn-elevate btn-icon-sm">
                                 <i class="la la-plus"></i>
                                Add Permission
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>

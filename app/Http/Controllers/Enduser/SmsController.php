@@ -33,43 +33,58 @@ class SmsController extends Controller
 
     public function sendSMS(Request $request)
     {
-        $data = DB::table('sms_settings')->orderBy('id', 'DESC')->first();
-        $url = "http://bdsmartpay.com/sms/smsapi.php";
+        $settings = DB::table('sms_settings')->orderBy('id', 'DESC')->first();
 
-        $data = array(
-            'username' => $data->user_id,
-            'password' => $data->password,
-            'sms_title' => urlencode("GO MAX GPS"),
-            'message' => urlencode($request->message),
-            'mobile' => $request->mobile
-        );
+        if($settings->status=='YES'){
 
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-        $result =  curl_exec($curl);
 
-        /*
-        $data = DB::table('sms_settings')->orderBy('id', 'DESC')->first();
+            $url = "http://bdsmartpay.com/sms/smsapi.php";
+            $data = array(
+                'username' => $settings->user_id,
+                'password' => $settings->password,
+                'sms_title' => urlencode("GO MAX GPS"),
+                'message' => urlencode($request->message),
+                'mobile' => $request->mobile
+            );
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+            $result =  curl_exec($curl);
 
-        $sms_title = urlencode("GO MAX GPS");
-        $username= $data->user_id;
-        $password = $data->password;
-        $mobile = $request->mobile;
-        $message = urlencode($request->message);
 
-        $url="https://bdsmartpay.com/sms/smsapi.php?username=$username&password=$password&sms_title=$sms_title&mobile=$mobile&message=$message";
-                $curl = curl_init();
-                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "GET");
-                curl_setopt($curl, CURLOPT_URL, $url);
-                curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-                curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-                $result =  curl_exec($curl);
-        */
-        return view('enduser.settings.sms.create');
+            DB::table('sms_log')->insert([
+                'number'=>$request->mobile,
+                'message'=>$request->message,
+                'status'=>$settings->status,
+            ]);
+
+            return redirect()->route('sms_settings_index')
+            ->with('success', 'Sms send successfully');
+
+
+        }else{
+
+            return redirect()->route('sms_settings_index')
+            ->with('error', 'Sms send failed');
+
+        }
+   
     }
+
+
+    public function smsLog(Request $request){
+        if ($request->ajax()) {
+            $data = DB::table('sms_log')->orderBy('id', 'DESC')->get();
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->make(true);
+        }
+        return view('enduser.settings.sms.sms_log');
+    }
+
+
+
     public function create()
     {
         return view('enduser.settings.sms.create');
